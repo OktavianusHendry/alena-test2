@@ -10,10 +10,4 @@ class StaffController extends Controller
     {
         return view('staff.dashboard');
     }
-
-    public function tugas()
-    {
-        // Tambahkan logika untuk tugas staff
-        return view('staff.tugas');
-    }
 }
