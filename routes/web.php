@@ -89,6 +89,8 @@ Route::middleware(['auth:karyawan'])->group(function () {
     Route::get('/staff/dashboard', function () {
         return view('staff.dashboard');
     })->name('staff.dashboard');
+
+    Route::get('/staff/dashboard', [StaffController::class, 'index'])->name('staff.dashboard');
 });
 
 // Untuk Manager
