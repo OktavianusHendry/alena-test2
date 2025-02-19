@@ -41,9 +41,15 @@ return [
             'provider' => 'users',
         ],
 
-        'karyawan' => [ // Tambahan guard untuk karyawan
-            'driver' => 'session',
-            'provider' => 'karyawans',
+        'karyawan' => [
+        'driver' => 'session',
+        'provider' => 'karyawans',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
         ],
     ],
 
@@ -77,7 +83,7 @@ return [
 
         'karyawans' => [ // Tambahan provider untuk karyawan
             'driver' => 'eloquent',
-            'model' => App\Models\Karyawan::class,
+            'model' => App\Models\KaryawanNew::class,
         ],
     ],
 

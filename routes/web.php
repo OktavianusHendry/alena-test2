@@ -83,6 +83,29 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 
 });
 
+// Untuk Staff
+Route::middleware(['auth:karyawan'])->group(function () {
+    Route::get('/staff/dashboard', function () {
+        return view('staff.dashboard');
+    })->name('staff.dashboard');
+});
+
+// Untuk Manager
+Route::middleware(['auth:karyawan'])->group(function () {
+    Route::get('/manager/dashboard', function () {
+        return view('manager.dashboard');
+    })->name('manager.dashboard');
+    
+    Route::get('/manager/karyawan', function () {
+        return view('manager.kelola-karyawan');
+    })->name('manager.karyawan');
+});
+
+// Default Karyawan
+Route::get('/karyawan/dashboard', function () {
+    return view('karyawan.dashboard');
+})->middleware('auth:karyawan')->name('karyawan.dashboard');
+
 Route::group(['middleware' => ['auth', 'isCrew']], function () {
 
     Route::get('/crew-dashboard', [CrewDashboardController::class, 'index'])->name('crew.dashboard');
