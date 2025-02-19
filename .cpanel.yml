@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/oktn8158/public_html/test.oktavianus.xyz
+    - /bin/cp -R * $DEPLOYPATH
