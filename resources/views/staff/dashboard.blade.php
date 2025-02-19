@@ -34,7 +34,7 @@
                     </div>
                 </div>
 
-                <!-- Menu Staff -->
+                <!-- Menu Staff
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <a href="{{ route('staff.tugas') }}" class="p-4 bg-blue-100 rounded-lg hover:bg-blue-200 transition">
                         <h3 class="font-semibold text-blue-800">📋 Daftar Tugas</h3>
@@ -45,7 +45,7 @@
                         <h3 class="font-semibold text-green-800">👤 Profil Saya</h3>
                         <p class="text-sm text-gray-600 mt-2">Kelola informasi akun Anda</p>
                     </a>
-                </div>
+                </div> -->
 
                 <!-- Logout Button -->
                 <div class="mt-8">
