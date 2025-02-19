@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Instansi;
-use App\Models\User;
+use App\Models\Karyawan;
 use App\Models\Sekolah;
 use App\Models\Kategori;
 use App\Models\Sub_Kategori;
@@ -17,6 +17,7 @@ class StaffController extends Controller
     {
         $this->middleware(['auth','verified']);
     }
+
     public function index()
     {
         // Hitung jumlah data untuk statistik
