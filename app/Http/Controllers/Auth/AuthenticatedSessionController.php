@@ -60,8 +60,8 @@ class AuthenticatedSessionController extends Controller
                 case '11': // Manager
                     return redirect()->route('manager.dashboard')->with('status', 'Welcome to your dashboard');
                 // Tambahkan case lain sesuai kebutuhan
-                default:
-                    return redirect()->route('karyawan.dashboard')->with('status', 'Welcome to your dashboard');
+                //default:
+                //    return redirect()->route('karyawan.dashboard')->with('status', 'Welcome to your dashboard');
             }
         }
 
