@@ -14,7 +14,7 @@ class LaporanCutiNewController extends Controller
     {
         // Mengambil semua data karyawan dan jenis cuti
         $karyawans = Karyawan::all();
-        $jenisCutis = JenisCuti::all();
+        $jenisCutis = Jenis_Cuti::all();
 
         // Mengambil semua laporan cuti untuk ditampilkan
         $laporanCutis = LaporanCutiNew::all();
