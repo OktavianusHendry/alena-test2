@@ -14,6 +14,7 @@ class LaporanCutiNewController extends Controller
     {
         $karyawans = Karyawan::all();
         $jenisCutis = Jenis_Cuti::all();
+        $cutis = LaporanCutiNew::with('karyawan')->get();
 
         // Mengambil laporan cuti dengan paginasi
         $laporanCutis = LaporanCutiNew::with('karyawan')->paginate(10); // Ganti 10 dengan jumlah item per halaman yang diinginkan

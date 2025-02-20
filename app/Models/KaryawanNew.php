@@ -22,4 +22,9 @@ class KaryawanNew extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function cuti()
+    {
+        return $this->hasMany(LaporanCutiNew::class, 'id_karyawan', 'id');
+    }
 }

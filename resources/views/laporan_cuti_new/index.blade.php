@@ -94,6 +94,7 @@
                                                 <td>{{ $cuti->divisi->kode_divisi ?? 'Tidak tersedia' }}</td>
                                                 <td>{{ $cuti->approved_by_director}}</td>
                                                 <td>{{ $cuti->approved_by_manager}}</td>
+                                                <td>{{ $cuti->alasan}}</td>
                                                 <td>
                                                     <a href="{{ route('laporan_cuti_new.show', $cuti->id) }}"
                                                         class="btn btn-info btn-sm">
