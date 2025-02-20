@@ -16,6 +16,7 @@ use App\Http\Controllers\BeritaAcaraController;
 use App\Http\Controllers\KaryawanNewController;
 use App\Http\Controllers\ReleaseController;
 use App\Http\Controllers\LaporanCutiController;
+use App\Http\Controllers\LaporanCutiNewController;
 use App\Http\Controllers\SekolahController;
 use App\Http\Controllers\UnitPenempatanController;
 use App\Http\Controllers\TujuanController;
@@ -328,8 +329,6 @@ Route::prefix('karyawan')->middleware('auth')->group(function () {
     Route::put('update/{id}', [KaryawanNewController::class, 'update'])->name('karyawan.update');
     Route::delete('destroy/{id}', [KaryawanNewController::class, 'destroy'])->name('karyawan.destroy');
 });
-
-use App\Http\Controllers\LaporanCutiNewController;
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/laporan-cuti-new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
