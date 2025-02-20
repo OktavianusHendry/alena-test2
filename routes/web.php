@@ -330,9 +330,26 @@ Route::prefix('karyawan')->middleware('auth')->group(function () {
     Route::delete('destroy/{id}', [KaryawanNewController::class, 'destroy'])->name('karyawan.destroy');
 });
 
-Route::get('laporan_cuti_new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
-Route::post('laporan_cuti_new', [LaporanCutiNewController::class, 'store'])->name('laporan_cuti_new.store');
-Route::put('laporan_cuti_new/{id}', [LaporanCutiNewController::class, 'update'])->name('laporan_cuti_new.update');
+// Rute untuk menampilkan daftar laporan cuti
+Route::get('/lalaporan_cuti_new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
+
+// Rute untuk menampilkan form untuk membuat laporan cuti baru
+Route::get('/laporan_cuti_new/create', [LaporanCutiNewController::class, 'create'])->name('laporan_cuti_new.create');
+
+// Rute untuk menyimpan laporan cuti baru
+Route::post('/laporan_cuti_new', [LaporanCutiNewController::class, 'store'])->name('laporan_cuti_new.store');
+
+// Rute untuk menampilkan detail laporan cuti
+Route::get('/laporan_cuti_new/{id}', [LaporanCutiNewController::class, 'show'])->name('laporan_cuti_new.show');
+
+// Rute untuk menampilkan form untuk mengedit laporan cuti
+Route::get('/laporan_cuti_new/{id}/edit', [LaporanCutiNewController::class, 'edit'])->name('laporan_cuti_new.edit');
+
+// Rute untuk memperbarui laporan cuti
+Route::put('/laporan_cuti_new/{id}', [LaporanCutiNewController::class, 'update'])->name('laporan_cuti_new.update');
+
+// Rute untuk menghapus laporan cuti
+Route::delete('/laporan_cuti_new/{id}', [LaporanCutiNewController::class, 'destroy'])->name('laporan_cuti_new.destroy');
 
 
 require __DIR__.'/auth.php';
