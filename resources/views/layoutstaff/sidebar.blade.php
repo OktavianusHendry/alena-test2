@@ -24,7 +24,7 @@
         </li>
         <li class="menu-item">
             <a href="##" class="menu-link">
-                <i class="menu-icon tf-icons bx bxs-watch'"></i>
+                <i class="bx bxs-watch"></i>
                 <div data-i18n="Analytics">Absensi</div>
             </a>
         </li>
