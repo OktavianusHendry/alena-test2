@@ -23,7 +23,7 @@
             </a>
         </li>
         <li class="menu-item active">
-            <a href="{{ route('##') }}" class="menu-link">
+            <a href="##" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Absensi</div>
             </a>
@@ -39,7 +39,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ ## }}" class="menu-link">
+                    <a href="##" class="menu-link">
                         <div data-i18n="Account">Biodata Karyawan</div>
                     </a>
                 </li>
@@ -52,7 +52,7 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ ## }}" class="menu-link">
+                    <a href="##" class="menu-link">
                         <div data-i18n="Account">File Manager</div>
                     </a>
                 </li>
