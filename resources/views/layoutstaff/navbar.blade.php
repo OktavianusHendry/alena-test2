@@ -45,7 +45,7 @@
                 <i class="bx bx-menu bx-sm"></i>
             </a>
         </div>
-        <span class="navbar-text"><b>{{ Auth::karyawan()->nama_lengkap }}</b></span>
+        <span class="navbar-text"><b>{{ Auth::user()->karyawan->nama_lengkap }}</b></span>
         &nbsp;&nbsp;<small class="navbar-text-second">Administrator</small>
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -58,7 +58,7 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="menu-icon tf-icons bx bxs-bell fs-4"></i>
                             @php
-                                $unreadCount = auth()->karyawan()->unreadNotifications->count();
+                            $unreadCount = auth()->user()->karyawan->unreadNotifications->count();;
                             @endphp
                             @if ($unreadCount > 0)
                                 <span
