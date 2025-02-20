@@ -3,7 +3,7 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row">
             <div class="col-lg-8 mb-4">
-                <div class="card" style="background: url('public/assets/img/illustrations/Header.png') center/cover no-repeat;">
+                <div class="card" style="background: url('../public/assets/img/illustrations/Header.png') center/cover no-repeat;">
                     <div class="d-flex align-items-end row">
                         <div class="col-sm-7">
                             <div class="card-body">
@@ -69,7 +69,7 @@
         <div class="row">
             <div class="col-lg-3 mb-4">
                 <div class="card"
-                    style="background: url('public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
+                    style="background: url('../public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
@@ -89,7 +89,7 @@
             </div>
             <div class="col-lg-3 mb-4">
                 <div class="card"
-                    style="background: url('public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
+                    style="background: url('../public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
@@ -109,7 +109,7 @@
             </div>
             <div class="col-lg-3 mb-4">
                 <div class="card"
-                    style="background: url('public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
+                    style="background: url('../public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
@@ -129,7 +129,7 @@
             </div>
             <div class="col-lg-3 mb-4">
                 <div class="card"
-                    style="background: url('public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
+                    style="background: url('../public/assets/img/illustrations/content1.jpg') center/cover no-repeat;">
                     <div class="card-body">
                         <div class="card-title d-flex align-items-start justify-content-between">
                             <div class="avatar flex-shrink-0">
