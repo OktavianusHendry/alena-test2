@@ -106,7 +106,7 @@
                                 </table>
                             </div>
                             <div class="d-flex justify-content-center my-4 pagination-wrapper">
-                                {{ $karyawan->appends(['search' => request()->input('search')])->links('pagination::bootstrap-4') }}
+                                {{ $karyawans->appends(['search' => request()->input('search')])->links('pagination::bootstrap-4') }}
                             </div>
                         @else
                             <div class="alert alert-info">
