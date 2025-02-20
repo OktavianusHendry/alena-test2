@@ -24,7 +24,7 @@ class LaporanCutiNew extends Model
 
     public function karyawan()
     {
-        return $this->belongsTo(Karyawan::class, 'id_karyawan');
+        return $this->belongsTo(Karyawan::class, 'id');
     }
 
     public function jenisCuti()
