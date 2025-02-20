@@ -13,7 +13,7 @@ class LaporanCutiNewController extends Controller
     public function index(Request $request)
     {
         $karyawans = Karyawan::all();
-        $jenisCutis = JenisCuti::all();
+        $jenisCutis = Jenis_Cuti::all();
 
         // Mengambil laporan cuti dengan paginasi
         $laporanCutis = LaporanCutiNew::with('karyawan')->paginate(10); // Ganti 10 dengan jumlah item per halaman yang diinginkan
