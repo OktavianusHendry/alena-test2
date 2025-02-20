@@ -29,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <strong>Jenis Cuti:</strong>
-                            <p>{{ $laporanCutis->jenis_Cuti->nama_jenis_cuti }}</p>
+                            <p>{{ $laporanCutis->jenis_cuti->nama_jenis_cuti }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Pengajuan:</strong>
