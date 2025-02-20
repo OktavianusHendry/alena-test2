@@ -13,6 +13,7 @@ use App\Http\Controllers\instansiController;
 use App\Http\Controllers\jabatanController;
 use App\Http\Controllers\JenjangController;
 use App\Http\Controllers\BeritaAcaraController;
+use App\Http\Controllers\KaryawanNewController;
 use App\Http\Controllers\ReleaseController;
 use App\Http\Controllers\LaporanCutiController;
 use App\Http\Controllers\SekolahController;
@@ -318,6 +319,15 @@ Route::post('/notifications/mark-all-as-read', function () {
     return response()->json(['status' => 'success']);
 })->name('notifications.markAllAsRead');
 
+Route::prefix('karyawan')->middleware('auth')->group(function () {
+    Route::get('/', [KaryawanNewController::class, 'index'])->name('karyawan.index');
+    Route::get('create', [KaryawanNewController::class, 'create'])->name('karyawan.create');
+    Route::post('store', [KaryawanNewController::class, 'store'])->name('karyawan.store');
+    Route::get('show/{id}', [KaryawanNewController::class, 'show'])->name('karyawan.show');
+    Route::get('edit/{id}', [KaryawanNewController::class, 'edit'])->name('karyawan.edit');
+    Route::put('update/{id}', [KaryawanNewController::class, 'update'])->name('karyawan.update');
+    Route::delete('destroy/{id}', [KaryawanNewController::class, 'destroy'])->name('karyawan.destroy');
+});
 
 
 require __DIR__.'/auth.php';
