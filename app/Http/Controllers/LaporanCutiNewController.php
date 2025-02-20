@@ -63,4 +63,15 @@ class LaporanCutiNewController extends Controller
         // Redirect ke index dengan pesan sukses
         return redirect()->route('laporan-cuti-new.index')->with('success', 'Laporan cuti berhasil diupdate!');
     }
+
+    public function show($id)
+    {
+        // Mencari laporan cuti berdasarkan ID
+        $laporanCutis = LaporanCutiNew::with(['karyawan', 'jenis_cuti'])->findOrFail($id);
+
+        // Mengembalikan view dengan data laporan cuti
+        return view('laporan_cuti_new.show', compact('laporanCutis'));
+    }
+
+    
 }
