@@ -67,7 +67,7 @@ class LaporanCutiNewController extends Controller
     public function show($id)
     {
         // Mencari laporan cuti berdasarkan ID
-        $laporanCutis = LaporanCutiNew::with(['karyawan', 'jeniscuti'])->findOrFail($id);
+        $laporanCutis = LaporanCutiNew::with(['karyawan', 'jenis_cuti'])->findOrFail($id);
 
         // Mengembalikan view dengan data laporan cuti
         return view('laporan_cuti_new.show', compact('laporanCutis'));

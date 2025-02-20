@@ -25,11 +25,11 @@
                         </div>
                         <div class="mb-3">
                             <strong>Divisi:</strong>
-                            <p>{{ $laporanCuti->karyawan->divisi->kode_divisi ?? 'Tidak tersedia' }}</p>
+                            <p>{{ $laporanCuti->karyawan->divisi ?? 'Tidak tersedia' }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Jenis Cuti:</strong>
-                            <p>{{ $laporanCuti->jenisCuti->nama_jenis_cuti }}</p>
+                            <p>{{ $laporanCuti->jenis_Cuti->nama_jenis_cuti }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Pengajuan:</strong>
