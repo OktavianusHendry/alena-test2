@@ -10,8 +10,40 @@ class LaporanCutiNewController extends Controller
     // Menampilkan semua pengajuan cuti
     public function index()
     {
-        $laporanCuti = LaporanCutiNew::all();
-        return response()->json($laporanCuti);
+        $search = $request->input('search');
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+    
+        $query = LaporanCutiNew::with(['karyawan', 'divisi', 'jenis_cuti']);
+    
+        // Filter reports based on user role
+        if (auth()->karyawan()) {
+            $query->where('id', auth()->karyawan()->id);  // Fixed the field to filter by user
+        }
+    
+        // Filter based on search input
+        if ($search) {
+            $query->where('status', 'like', "%$search%")
+                ->orWhereHas('users', function ($query) use ($search) {
+                    $query->where('name', 'like', "%$search%");
+                })
+                ->orWhereHas('divisi', function ($query) use ($search) {
+                    $query->where('kode_divisi', 'like', "%$search%");  // Fixed field name
+                })
+                ->orWhereHas('jenis_cuti', function ($query) use ($search) {
+                    $query->where('nama_jenis_cuti', 'like', "%$search%");
+                });
+        }
+    
+        // Filter based on date range
+        if ($startDate && $endDate) {
+            $query->whereBetween('mulai_tanggal', [$startDate, $endDate])
+                  ->orWhereBetween('sampai_tanggal', [$startDate, $endDate]);
+        }
+    
+        $laporanCuti = $query->orderBy('created_at', 'desc')->paginate(10);
+    
+        return view('laporan_cuti_new.index', compact('laporanCuti'));
     }
 
     // Menyimpan pengajuan cuti baru
