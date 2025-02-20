@@ -10,7 +10,7 @@ class KaryawanNewController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-        $karyawans = Karyawan::where('nama_lengkap', 'like', '%' . $search . '%')->paginate(10);
+        $karyawans = KaryawanNew::where('nama_lengkap', 'like', '%' . $search . '%')->paginate(10);
 
         return view('karyawan.index', compact('karyawans'));
     }
