@@ -329,5 +329,16 @@ Route::prefix('karyawan')->middleware('auth')->group(function () {
     Route::delete('destroy/{id}', [KaryawanNewController::class, 'destroy'])->name('karyawan.destroy');
 });
 
+use App\Http\Controllers\LaporanCutiNewController;
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/laporan-cuti-new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
+    Route::get('/laporan-cuti-new/create', [LaporanCutiNewController::class, 'create'])->name('laporan_cuti_new.create');
+    Route::post('/laporan-cuti-new', [LaporanCutiNewController::class, 'store'])->name('laporan_cuti_new.store');
+    Route::get('/laporan-cuti-new/{id}/edit', [LaporanCutiNewController::class, 'edit'])->name('laporan_cuti_new.edit');
+    Route::put('/laporan-cuti-new/{id}', [LaporanCutiNewController::class, 'update'])->name('laporan_cuti_new.update');
+    Route::delete('/laporan-cuti-new/{id}', [LaporanCutiNewController::class, 'destroy'])->name('laporan_cuti_new.destroy');
+});
+
 
 require __DIR__.'/auth.php';
