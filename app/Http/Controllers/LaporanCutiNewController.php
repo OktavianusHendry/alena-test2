@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Karyawan;
-use App\Models\JenisCuti;
+use App\Models\Jenis_Cuti;
 use App\Models\LaporanCutiNew;
 use Illuminate\Http\Request;
 
