@@ -90,7 +90,7 @@
                                         @foreach ($laporanCutis as $cuti)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $cuti->karyawan->name_lengkap }}</td>
+                                                <td>{{ $cuti->karyawan->nama_lengkap }}</td>
                                                 <td>{{ $cuti->divisi->kode_divisi ?? 'Tidak tersedia' }}</td>
                                                 <td>{{ $cuti->approved_by_director}}</td>
                                                 <td>{{ $cuti->approved_by_manager}}</td>
