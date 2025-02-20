@@ -330,6 +330,8 @@ Route::prefix('karyawan')->middleware('auth')->group(function () {
     Route::delete('destroy/{id}', [KaryawanNewController::class, 'destroy'])->name('karyawan.destroy');
 });
 
+Route::get('laporan_cuti_new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
+
 Route::middleware(['auth'])->group(function () {
     Route::get('laporan_cuti_new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
     Route::get('laporan_cuti_new/create', [LaporanCutiNewController::class, 'create'])->name('laporan_cuti_new.create');
