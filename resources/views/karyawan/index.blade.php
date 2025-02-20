@@ -36,7 +36,7 @@
                             </div>
                         </form>
 
-                        @if ($users->count() > 0)
+                        @if ($karyawan->count() > 0)
                             <div class="table-responsive text-nowrap">
                                 <br>
                                 <table class="table table-hover align-content-center">
@@ -69,13 +69,13 @@
                                                         @elseif ($karyawan->jabatan == '11')
                                                             <button
                                                                 class="btn btn-warning btn-sm disabled">Manager</button>
-                                                        @elseif ($user->role_as == '13')
+                                                        @elseif ($karyawan->jabatan == '13')
                                                             <button
                                                                 class="btn btn-primary btn-sm disabled">&nbsp;&nbsp;&nbsp;Kepala LKP&nbsp;&nbsp;&nbsp;</button>
-                                                        @elseif ($user->role_as == '14')
+                                                        @elseif ($karyawan->jabatan == '14')
                                                             <button
                                                                 class="btn btn-primary btn-sm disabled">&nbsp;&nbsp;&nbsp;Wakil Direktur&nbsp;&nbsp;&nbsp;</button>
-                                                        @elseif ($user->role_as == '15')
+                                                        @elseif ($karyawan->jabatan == '15')
                                                             <button
                                                                 class="btn btn-primary btn-sm disabled">&nbsp;&nbsp;&nbsp;Direktur&nbsp;&nbsp;&nbsp;</button>
                                                         @endif
@@ -106,11 +106,11 @@
                                 </table>
                             </div>
                             <div class="d-flex justify-content-center my-4 pagination-wrapper">
-                                {{ $users->appends(['search' => request()->input('search')])->links('pagination::bootstrap-4') }}
+                                {{ $karyawan->appends(['search' => request()->input('search')])->links('pagination::bootstrap-4') }}
                             </div>
                         @else
                             <div class="alert alert-info">
-                                Tidak ada data users ditemukan.
+                                Tidak ada data Karyawan ditemukan.
                             </div>
                         @endif
                     </div>
