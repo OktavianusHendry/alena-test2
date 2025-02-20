@@ -10,16 +10,14 @@ use Illuminate\Http\Request;
 
 class LaporanCutiNewController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        // Mengambil semua data karyawan dan jenis cuti
         $karyawans = Karyawan::all();
-        $jenisCutis = Jenis_Cuti::all();
+        $jenisCutis = JenisCuti::all();
 
-        // Mengambil semua laporan cuti untuk ditampilkan
-        $laporanCutis = LaporanCutiNew::all();
+        // Mengambil laporan cuti dengan paginasi
+        $laporanCutis = LaporanCutiNew::with('karyawan')->paginate(10); // Ganti 10 dengan jumlah item per halaman yang diinginkan
 
-        // Mengembalikan view dengan data yang diperlukan
         return view('laporan_cuti_new.index', compact('karyawans', 'jenisCutis', 'laporanCutis'));
     }
 
