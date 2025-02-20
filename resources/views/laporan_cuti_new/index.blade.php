@@ -87,7 +87,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($laporanCutiNew as $cuti)
+                                        @foreach ($laporanCutis as $cuti)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $cuti->karyawan->name_lengkap }}</td>
