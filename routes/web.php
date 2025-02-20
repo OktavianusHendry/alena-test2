@@ -121,6 +121,11 @@ Route::group(['middleware' => ['auth']], function () {
 
 });
 
+Route::post('/logout', function () {
+    Auth::guard('karyawan')->logout();
+    return redirect('/');
+})->name('logout');
+
 // User routes
 Route::put('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
 
