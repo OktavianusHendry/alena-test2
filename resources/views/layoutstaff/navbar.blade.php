@@ -45,7 +45,7 @@
                 <i class="bx bx-menu bx-sm"></i>
             </a>
         </div>
-        <span class="navbar-text"><b>{{ Auth::karyawan()->name }}</b></span>
+        <span class="navbar-text"><b>{{ Auth::karyawan()->nama }}</b></span>
         &nbsp;&nbsp;<small class="navbar-text-second">Administrator</small>
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
