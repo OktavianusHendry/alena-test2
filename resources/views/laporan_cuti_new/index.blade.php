@@ -66,7 +66,7 @@
                             </div>
                         </form>
 
-                        @if ($laporanCutiNew->count() > 0)
+                        @if ($laporanCutis->count() > 0)
                             <div class="table-responsive text-nowrap">
                                 <br>
                                 <table class="table table-hover align-content-center">
