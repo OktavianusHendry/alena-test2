@@ -46,11 +46,11 @@
                 <div class="card mb-4">
                     <div class="container">
                         <div class="d-flex justify-content-between mb-3">
-                                <a href="{{ route('laporan_cuti_new.create') }}">
-                                    <button type="button" class="btn rounded-pill btn-primary mt-3 align-content-center">
-                                        <i class="menu-icon tf-icons bx bxs-plus-circle"></i> Tambah
-                                    </button>
-                                </a>
+                            <a href="{{ route('laporan_cuti_new.create') }}">
+                                <button type="button" class="btn rounded-pill btn-primary mt-3 align-content-center">
+                                    <i class="menu-icon tf-icons bx bxs-plus-circle"></i> Tambah
+                                </button>
+                            </a>
                         </div>
                         @if (session('success'))
                             <div class="alert alert-success">
@@ -66,22 +66,8 @@
                             </div>
                         </form>
 
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        <form action="{{ route('laporan_cuti_new.index') }}" method="GET" class="mb-3">
-                            <div class="form-group d-flex">
-                                <input type="text" name="search" value="{{ request()->input('search') }}"
-                                    class="form-control" placeholder="Cari laporan cuti...">
-                                <button type="submit" class="btn btn-primary">Cari</button>
-                            </div>
-                        </form>
-
                         @if ($laporanCutiNew->count() > 0)
-                        <div class="table-responsive text-nowrap">
+                            <div class="table-responsive text-nowrap">
                                 <br>
                                 <table class="table table-hover align-content-center">
                                     <thead>
@@ -107,21 +93,20 @@
                                                 <td>{{ $cuti->karyawan->name_lengkap }}</td>
                                                 <td>{{ $cuti->divisi->kode_divisi ?? 'Tidak tersedia' }}</td>
                                                 <td>{{ $cuti->approved_by_director}}</td>
-                                                <td>{{ $cuti->aapproved_by_manager}}</td>
+                                                <td>{{ $cuti->approved_by_manager}}</td>
                                                 <td>
-                                                    <a href="{{ route('laporan_cuti_new.show', $Laporan_Cuti_New->id) }}"
+                                                    <a href="{{ route('laporan_cuti_new.show', $cuti->id) }}"
                                                         class="btn btn-info btn-sm">
-                                                        &nbsp;<i
-                                                            class="menu-icon tf-icons bx bxs-detail"></i></a>&nbsp;&nbsp;
-                                                    <a href="{{ route('Laporan_Cuti_New.edit', $Laporan_Cuti_New->id) }}"
+                                                        &nbsp;<i class="menu-icon tf-icons bx bxs-detail"></i></a>&nbsp;&nbsp;&nbsp;
+                                                    <a href="{{ route('laporan_cuti_new.edit', $cuti->id) }}"
                                                         class="btn btn-warning btn-sm">
                                                         &nbsp;<i class="menu-icon tf-icons bx bx-edit"></i>
                                                     </a>&nbsp;&nbsp;
-                                                    <form action="{{ route('Laporan_Cuti_New.destroy', $Laporan_Cuti_New->id) }}" method="POST"
+                                                    <form action="{{ route('laporan_cuti_new.destroy', $cuti->id) }}" method="POST"
                                                         style="display:inline;"
                                                         onsubmit="return confirm('Yakin ingin menghapus?');">
-                                                        <input type="hidden" name="_method" value="delete" />
-                                                        {{ csrf_field() }}
+                                                        @csrf
+                                                        @method('DELETE')
                                                         <button type="submit" class="btn btn-danger btn-sm">
                                                             &nbsp; <i class="menu-icon tf-icons bx bx-trash"></i>
                                                         </button>
@@ -133,7 +118,7 @@
                                 </table>
                             </div>
                             <div class="d-flex justify-content-center my-4 pagination-wrapper">
-                                {{ $laporanCuti->appends(['search' => request()->input('search')])->links('pagination::bootstrap-4') }}
+                                {{ $laporanCutiNew->appends(['search' => request()->input('search')])->links('pagination::bootstrap-4') }}
                             </div>
                         @else
                             <div class="alert alert-info">
