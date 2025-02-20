@@ -37,15 +37,13 @@
 
 <nav class="navbar navbar-expand-lg navbar-white">
     <div class="container-fluid">
-        <!-- Place this tag where you want the button to render. -->
-
         <!-- Left side: Welcome message -->
         <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
             <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
                 <i class="bx bx-menu bx-sm"></i>
             </a>
         </div>
-        <span class="navbar-text"><b>{{ Auth::guard('karyawan')->user()->nama_lengkap ?? 'Guest'}}</b></span>
+        <span class="navbar-text"><b>{{ Auth::guard('karyawan')->user()?->nama_lengkap ?? 'Guest' }}</b></span>
         &nbsp;&nbsp;<small class="navbar-text-second">Administrator</small>
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
@@ -58,7 +56,7 @@
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="menu-icon tf-icons bx bxs-bell fs-4"></i>
                             @php
-                            $unreadCount = auth('karyawan')->user()->unreadNotifications->count() ?? 0;
+                                $unreadCount = auth('karyawan')->user()?->unreadNotifications->count() ?? 0;
                             @endphp
                             @if ($unreadCount > 0)
                                 <span
@@ -68,7 +66,7 @@
                             @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            @forelse (auth()->karyawan()->notifications as $notification)
+                            @forelse (auth('karyawan')->user()?->notifications ?? [] as $notification)
                                 <div class="d-flex justify-content-between align-items-center">
                                     <a class="dropdown-item" href="{{ route('laporan_cuti.index') }}">
                                         {{ $notification->data['message_2'] }}
