@@ -22,6 +22,12 @@
                 <div data-i18n="Analytics">Dashboard</div>
             </a>
         </li>
+        <li class="menu-item active">
+            <a href="{{ route('##') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Absensi</div>
+            </a>
+        </li>
 
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">master</span>
@@ -33,43 +39,21 @@
             </a>
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ route('divisi.index') }}" class="menu-link">
-                        <div data-i18n="Account">Data Divisi</div>
+                    <a href="{{ ## }}" class="menu-link">
+                        <div data-i18n="Account">Biodata Karyawan</div>
                     </a>
                 </li>
+            </ul>
+        </li>
+        <li class="menu-item">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-menu"></i>
+                <div data-i18n="Account Settings">Data Arsip</div>
+            </a>
+            <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="{{ route('jabatan.index') }}" class="menu-link">
-                        <div data-i18n="Account">Data Jabatan</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('tujuan.index') }}" class="menu-link">
-                        <div data-i18n="Account">Data Tujuan</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('instansi.index') }}" class="menu-link">
-                        <div data-i18n="Notifications">Data Instansi</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('sekolah.index') }}" class="menu-link">
-                        <div data-i18n="Notifications">Data Sekolah</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('users.index') }}" class="menu-link">
-                        <div data-i18n="Notifications">Data User</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('jenis_cuti.index') }}" class="menu-link">
-                        <div data-i18n="Notifications">Data Jenis Cuti</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="{{ route('unit_penempatan.index') }}" class="menu-link">
-                        <div data-i18n="Notifications">Data Unit Penempatan</div>
+                    <a href="{{ ## }}" class="menu-link">
+                        <div data-i18n="Account">File Manager</div>
                     </a>
                 </li>
             </ul>
