@@ -15,7 +15,7 @@
         <div class="container-xxl flex-grow-1zz container-p-y">
             <main class="py-4">
                 <div class="d-flex justify-content-between mb-2">
-                    @if (Auth::user()->role_as == '1' || Auth::user()->karyawan->jabatan )
+                    @if (auth()->check() && (auth()->user()->role_as == '1' || (auth()->user()->karyawan && auth()->user()->karyawan->jabatan)))
                         <h2 class="fw-bold py-3 mb-1">
                             <b>Data Pengajuan Cuti</b>
                             <span class="text-muted fw-light">/ Manajemen Riwayat Pengajuan Cuti Karyawan</span>
