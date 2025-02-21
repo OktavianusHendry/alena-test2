@@ -71,11 +71,11 @@ class LaporanCutiNewController extends Controller
 
         // Debugging: Check if the relationship is loaded
         if (!$laporanCutis) {
-            return redirect()->route('laporan_cuti_new.show')->with('error', 'Laporan cuti tidak ditemukan!');
+            return redirect()->route('laporan_cuti_new.index')->with('error', 'Laporan cuti tidak ditemukan!');
         }
 
         if (!$laporanCutis->jenis_cuti) {
-            return redirect()->route('laporan_cuti_new.show')->with('error', 'Jenis cuti tidak ditemukan untuk laporan ini!');
+            return redirect()->route('laporan_cuti_new.show', ['id' => $id])->with('error', 'Jenis cuti tidak ditemukan untuk laporan ini!');
         }
 
         // Mengembalikan view dengan data laporan cuti
