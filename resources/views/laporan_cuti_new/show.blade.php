@@ -63,10 +63,10 @@
                             <strong>Aksi:</strong>
                                 <a href="{{ route('laporan_cuti_new.index') }}" class="btn btn-warning">Kembali</a>
                                 <a href="{{ route('laporan_cuti_new.edit', $laporanCutis->id) }}" class="btn btn-info">Edit</a>
-                                @if (Auth::user()->karyawan->jabatan == '15' || Auth::user()->role_as == '1')
+                                @if (Auth::karyawan()->jabatan == '15' || Auth::user()->role_as == '1')
                                     <a href="{{ route('laporan_cuti_new.validasi', $laporanCutis->id) }}" class="btn btn-success">Format ASN</a>   
                                 @endif
-                                @if (Auth::user()->karyawan->jabatan == '14' || Auth::user()->role_as == '1')
+                                @if (Auth::karyawan()->jabatan == '14' || Auth::user()->role_as == '1')
                                     <a href="{{ route('laporan_cuti_new.validasi', $laporanCutis->id) }}" class="btn btn-success">Format ASN</a>   
                                 @endif
                         </div>
