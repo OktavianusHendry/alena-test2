@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\CrewDashboardController;
 use App\Http\Controllers\UserDashboardController;
 use App\Http\Controllers\DivisiController;
