@@ -59,16 +59,9 @@
                         <a class="nav-link position-relative" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="menu-icon tf-icons bx bxs-bell fs-4"></i>
-                            @if(auth()->check())
-                                <span class="badge bg-danger">{{ auth()->user()->unreadNotifications->count() }}</span>
-                            @else
-                                <span class="badge bg-secondary">0</span>
-                                <span
-                                    class="badge bg-warning position-absolute top-0 start-100 translate-middle p-1 border border-light rounded-circle"
-                                    style="width: 18px; height: 18px; padding: 0; font-size: 12px; text-align: center;">
-                                    {{ $unreadCount }}
-                                </span>
-                            @endif
+                            @php
+                                $unreadCount = auth()->check() ? auth()->user()->unreadNotifications->count() : 0;
+                            @endphp
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                             @forelse (auth()->user()->notifications as $notification)
