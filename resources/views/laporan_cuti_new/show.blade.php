@@ -10,9 +10,6 @@
                     <h2 class="fw-bold py-3 mb-1">
                         <b>Detail Laporan Cuti</b>
                     </h2>
-                    <a href="{{ route('laporan_cuti_new.index') }}" class="btn btn-secondary">
-                        Kembali
-                    </a>
                 </div>
 
                 <div class="card mb-4">
@@ -54,10 +51,6 @@
                         <div class="mb-3">
                             <strong>Status Persetujuan Manajer:</strong>
                             <p>{{ $laporanCutis->approved_by_manager }}</p>
-                        </div>
-                        <div class="mb-3">
-                            <strong>Catatan:</strong>
-                            <p>{{ $laporanCutis->catatan ?? 'Tidak ada catatan' }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Aksi:</strong>
