@@ -27,4 +27,9 @@ class KaryawanNew extends Authenticatable
     {
         return $this->hasMany(LaporanCutiNew::class, 'id_karyawan', 'id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'id', 'id'); // Assuming 'user_id' is the foreign key in the karyawan table
+    }
 }
