@@ -25,16 +25,16 @@ class KaryawanNew extends Authenticatable
 
     public function cuti()
     {
-        return $this->hasMany(LaporanCutiNew::class, 'id_karyawan', 'id');
+        return $this->hasMany(Cuti::class, 'id_karyawan', 'id');
+    }
+
+    public function jabatan()
+    {
+        return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class, 'id', 'id'); // Assuming 'user_id' is the foreign key in the karyawan table
-    }
-    
-    public function jabatan()
-    {
-        return $this->belongsTo(Jabatan::class, 'id_jabatan', 'id');
+        return $this->belongsTo(User::class, 'id', 'id_karyawan');
     }
 }

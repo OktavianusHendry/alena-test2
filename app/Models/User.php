@@ -83,6 +83,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function karyawan()
     {
-        return $this->hasOne(Karyawan::class);
+        return $this->hasOne(KaryawanNew::class, 'id', 'id_karyawan');
     }
 }
