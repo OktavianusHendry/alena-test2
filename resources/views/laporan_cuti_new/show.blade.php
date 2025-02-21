@@ -53,6 +53,10 @@
                             <p>{{ $laporanCutis->approved_by_manager }}</p>
                         </div>
                         <div class="mb-3">
+                            <strong>Catatan:</strong>
+                            <p>{{ $laporanCutis->catatan ?? 'Tidak ada catatan' }}</p>
+                        </div>
+                        <div class="mb-3">
                             <strong>Aksi:</strong>
                                 <a href="{{ route('laporan_cuti_new.index') }}" class="btn btn-warning">Kembali</a>
                                 <a href="{{ route('laporan_cuti_new.edit', $laporanCutis->id) }}" class="btn btn-info">Edit</a>
