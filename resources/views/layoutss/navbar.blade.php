@@ -47,7 +47,7 @@
                 <i class="bx bx-menu bx-sm"></i>
             </a>
         </div>
-        <span class="navbar-text"><b>{{ Auth::user()->name }}</b></span>
+        <span class="navbar-text"><b>{{ auth()->check() ? auth()->user()->name : 'Guest' }}</b></span>
         &nbsp;&nbsp;<small class="navbar-text-second">Karyawan</small>
 
         <ul class="navbar-nav flex-row align-items-center ms-auto">
