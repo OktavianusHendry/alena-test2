@@ -102,7 +102,7 @@ Route::middleware(['auth:karyawan'])->group(function () {
         return view('manager.dashboard');
     })->name('manager.dashboard');
     
-    Route::get('/manager/dashboard', [ManagerController::class, 'index'])->name('manager.dashboard');
+    Route::get('/manager/dashboard', [ManagerController::class, 'dashboard'])->name('manager.dashboard');
 });
 
 // Default Karyawan
