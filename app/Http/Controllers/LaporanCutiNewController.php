@@ -67,7 +67,16 @@ class LaporanCutiNewController extends Controller
     public function show($id)
     {
         // Mencari laporan cuti berdasarkan ID
-        $laporanCutis = LaporanCutiNew::with(['karyawan', 'jenis_cuti'])->findOrFail($id);
+        $laporanCutis = LaporanCutiNew::with(['karyawan', 'jenis_cuti'])->find($id);
+
+        // Debugging: Check if the relationship is loaded
+        if (!$laporanCutis) {
+            return redirect()->route('laporan_cuti_new.index')->with('error', 'Laporan cuti tidak ditemukan!');
+        }
+
+        if (!$laporanCutis->jenis_cuti) {
+            return redirect()->route('laporan_cuti_new.index')->with('error', 'Jenis cuti tidak ditemukan untuk laporan ini!');
+        }
 
         // Mengembalikan view dengan data laporan cuti
         return view('laporan_cuti_new.show', compact('laporanCutis'));

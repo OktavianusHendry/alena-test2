@@ -21,7 +21,7 @@
                         <hr>
                         <div class="mb-3">
                             <strong>Nama Karyawan:</strong>
-                            <p>{{ $laporanCutis->karyawan->name_lengkap }}</p>
+                            <p>{{ $laporanCutis->karyawan->nama_lengkap }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Divisi:</strong>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="mb-3">
                             <strong>Jenis Cuti:</strong>
-                            <p>{{ $laporanCutis->jenis_cuti->nama_jenis_cuti }}</p>
+                            <p>{{ $laporanCutis->jenis_cuti ? $laporanCutis->jenis_cuti->nama_jenis_cuti : 'Tidak tersedia' }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Pengajuan:</strong>
