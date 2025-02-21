@@ -1,10 +1,13 @@
 @extends(
-    auth()->check() 
-        ? (auth()->user()->role_as == '1' 
-            ? 'layouts.template' 
-            : (auth()->user()->karyawan && auth()->user()->karyawan->jabatan == '10' 
-                ? 'layoutstaf.template')) 
-                : 'layoutss.template'
+    auth()->check()
+        ? (auth()->user()->role_as == '1'
+            ? 'layouts.template'
+            : (auth()->user()->karyawan && auth()->user()->karyawan->jabatan == '10'
+                ? 'layoutstaf.template'
+                : 'layoutss.template' // Tambahkan ELSE di sini agar kondisi lengkap
+            )
+        )
+        : 'layoutss.template'
 )
 
 @section('content')
