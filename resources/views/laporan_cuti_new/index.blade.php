@@ -28,7 +28,7 @@
                     @endif
                 </div>
 
-                @if (Auth::user()->role_as == '1')
+                @if (auth()->check() && (auth()->user()->role_as == '1' || (auth()->user()->karyawan && auth()->user()->karyawan->jabatan)))
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <div class="input-group">
