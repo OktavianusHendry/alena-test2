@@ -27,8 +27,8 @@ class LaporanCutiNew extends Model
         return $this->belongsTo(KaryawanNew::class, 'id_karyawan', 'id'); // Menggunakan 'id_karyawan' di tabel cuti dan 'id' di tabel karyawan
     }
 
-    public function jenisCuti()
+    public function jenis_cuti()
     {
-        return $this->belongsTo(Jenis_Cuti::class, 'id_jenis_cuti');
+        return $this->belongsTo(Jenis_Cuti::class, 'id_jenis_cuti', 'id_jenis_cuti');
     }
 }
