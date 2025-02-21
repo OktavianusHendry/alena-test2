@@ -1,13 +1,18 @@
-@extends(Auth::user()->role_as == '1' ? 'layouts.template' 
-    : (Auth::user()->karyawan->jabatan == '10' ? 'layoutstaf.template' 
-    : 'layoutss.template'))
+@extends(
+    auth()->check() 
+        ? (auth()->user()->role_as == '1' 
+            ? 'layouts.template' 
+            : (auth()->user()->karyawan && auth()->user()->karyawan->jabatan == '10' 
+                ? 'layoutstaf.template')) 
+                : 'layoutss.template'
+)
 
 @section('content')
     <div id="app">
         <div class="container-xxl flex-grow-1zz container-p-y">
             <main class="py-4">
                 <div class="d-flex justify-content-between mb-2">
-                    @if (Auth::user()->role_as == '1')
+                    @if (Auth::user()->role_as == '1' || Auth::user()->karyawan->jabatan )
                         <h2 class="fw-bold py-3 mb-1">
                             <b>Data Pengajuan Cuti</b>
                             <span class="text-muted fw-light">/ Manajemen Riwayat Pengajuan Cuti Karyawan</span>
