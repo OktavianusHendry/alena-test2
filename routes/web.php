@@ -98,13 +98,13 @@ Route::middleware(['auth:karyawan'])->group(function () {
 
 // Untuk Manager
 Route::middleware(['auth:karyawan'])->group(function () {
-    Route::get('/manager/dashboard', function () {
-        return view('manager.dashboard');
-    })->name('manager.dashboard');
+    Route::get('/staff/dashboard', function () {
+        return view('staff.dashboard');
+    })->name('staff.dashboard');
     
-    Route::get('/manager/karyawan', function () {
-        return view('manager.kelola-karyawan');
-    })->name('manager.karyawan');
+    Route::get('/staff/karyawan', function () {
+        return view('staff.kelola-karyawan');
+    })->name('staff.karyawan');
 });
 
 // Default Karyawan
