@@ -99,19 +99,6 @@
                                                     <a href="{{ route('laporan_cuti_new.show', $cuti->id) }}"
                                                         class="btn btn-info btn-sm">
                                                         &nbsp;<i class="menu-icon tf-icons bx bxs-detail"></i></a>&nbsp;&nbsp;&nbsp;
-                                                    <a href="{{ route('laporan_cuti_new.edit', $cuti->id) }}"
-                                                        class="btn btn-warning btn-sm">
-                                                        &nbsp;<i class="menu-icon tf-icons bx bx-edit"></i>
-                                                    </a>&nbsp;&nbsp;
-                                                    <form action="{{ route('laporan_cuti_new.destroy', $cuti->id) }}" method="POST"
-                                                        style="display:inline;"
-                                                        onsubmit="return confirm('Yakin ingin menghapus?');">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm">
-                                                            &nbsp; <i class="menu-icon tf-icons bx bx-trash"></i>
-                                                        </button>
-                                                    </form>
                                                 </td>
                                             </tr>
                                         @endforeach
