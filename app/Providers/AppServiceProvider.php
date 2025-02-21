@@ -7,6 +7,7 @@ use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use App\Models\User;
 
 class AppServiceProvider extends ServiceProvider
@@ -49,6 +50,12 @@ class AppServiceProvider extends ServiceProvider
                     'user' => $notifiable,
                     'url'  => $url,
                 ]);
+        });
+
+        // Menambahkan unread notifications ke semua view
+        View::composer('*', function ($view) {
+            $unreadCount = auth()->check() ? auth()->user()->unreadNotifications->count() : 0;
+            $view->with('unreadCount', $unreadCount);
         });
     }
 }
