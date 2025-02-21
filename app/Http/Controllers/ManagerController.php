@@ -26,6 +26,6 @@ class ManagerController extends Controller
         $totalUnitPenempatans = Unit_Penempatan::count();
 
         // Kirimkan data ke view
-        return view('managerq.dashboard', compact('instansis', 'users', 'sekolahs', 'totalUnitPenempatans',));
+        return view('manager.dashboard', compact('instansis', 'users', 'sekolahs', 'totalUnitPenempatans',));
     }
 }
