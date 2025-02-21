@@ -10,7 +10,7 @@ use App\Models\Kategori;
 use App\Models\Sub_Kategori;
 use App\Models\Unit_Penempatan;
 
-class StaffController extends Controller
+class ManagerController extends Controller
 {
     public function __construct()
     {
