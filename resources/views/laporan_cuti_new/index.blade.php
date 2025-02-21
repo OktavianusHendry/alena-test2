@@ -86,7 +86,7 @@
                                             <th>Status</th>
                                             <th>Status</th>
                                             <th>Catatan</th>
-                                            @if (Auth::user()->role_as == 1)
+                                            @if (auth()->check() && (auth()->user()->role_as == '1' || (auth()->user()->karyawan && auth()->user()->karyawan->jabatan)))
                                                 <!-- Hanya admin -->
                                                 <th>Aksi</th>
                                             @else
