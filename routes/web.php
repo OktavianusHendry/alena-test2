@@ -31,6 +31,7 @@ use App\Http\Controllers\SuratKeluarNewController;
 use App\Http\Controllers\ArsipPembelajaranController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\ApprovalCutiController;
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
 
@@ -350,6 +351,11 @@ Route::put('laporan_cuti_new/{id}', [LaporanCutiNewController::class, 'update'])
 
 // Rute untuk menghapus laporan cuti
 Route::delete('laporan_cuti_new/{id}', [LaporanCutiNewController::class, 'destroy'])->name('laporan_cuti_new.destroy');
+
+Route::middleware(['auth', 'jabatan.approval'])->group(function () {
+    Route::post('/cuti/approve/{id}', [ApprovalCutiController::class, 'approve'])->name('cuti.approve');
+    Route::post('/cuti/reject/{id}', [ApprovalCutiController::class, 'reject'])->name('cuti.reject');
+});
 
 
 require __DIR__.'/auth.php';
