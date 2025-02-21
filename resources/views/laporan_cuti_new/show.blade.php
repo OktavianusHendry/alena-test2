@@ -33,7 +33,7 @@
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Pengajuan:</strong>
-                            <p>{{ $laporanCutis->tanggal_pengajuan->format('d-m-Y') }}</p>
+                            <p>{{ $laporanCutis->created_at->format('d-m-Y') }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Mulai:</strong>
