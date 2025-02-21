@@ -128,6 +128,12 @@
                 <div data-i18n="Boxicons">Data Pengajuan Cuti</div>
             </a>
         </li>
+        <li class="menu-item">
+            <a href="{{ route('laporan_cuti_new.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Boxicons">Data Pengajuan Cuti New</div>
+            </a>
+        </li>
     </ul>
 
 </aside>
