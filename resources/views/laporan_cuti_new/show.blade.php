@@ -33,15 +33,15 @@
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Pengajuan:</strong>
-                            <p>{{ $laporanCutis->created_at->format('d-m-Y') }}</p>
+                            <p>{{ $laporanCutis->created_at ? $laporanCutis->created_at->format('d-m-Y') : 'Tidak tersedia' }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Mulai:</strong>
-                            <p>{{ $laporanCutis->tanggal_mulai->format('d-m-Y') }}</p>
+                            <p>{{ $laporanCutis->tanggal_mulai ? $laporanCutis->tanggal_mulai->format('d-m-Y') : 'Tidak tersedia' }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Tanggal Selesai:</strong>
-                            <p>{{ $laporanCutis->tanggal_selesai->format('d-m-Y') }}</p>
+                            <p>{{ $laporanCutis->tanggal_selesai ? $laporanCutis->tanggal_selesai->format('d-m-Y') : 'Tidak tersedia' }}</p>
                         </div>
                         <div class="mb-3">
                             <strong>Alasan:</strong>

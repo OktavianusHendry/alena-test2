@@ -21,6 +21,13 @@ class LaporanCutiNew extends Model
         'approved_by_director',
         'approved_by_manager',
     ];
+    
+    protected $casts = [
+        'tanggal_pengajuan' => 'datetime',
+        'tanggal_mulai' => 'datetime',
+        'tanggal_selesai' => 'datetime',
+        'created_at' => 'datetime',
+    ];
 
     public function karyawan()
     {
