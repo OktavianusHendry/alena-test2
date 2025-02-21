@@ -99,7 +99,7 @@
                                                     <a href="{{ route('laporan_cuti_new.show', $cuti->id) }}"
                                                         class="btn btn-info btn-sm">
                                                         &nbsp;<i class="menu-icon tf-icons bx bxs-detail"></i></a>&nbsp;&nbsp;&nbsp;
-                                                        @if(Auth::user()->karyawan && (Auth::user()->karyawan->jabatan == 20 || Auth::user()->karyawan->jabatan == 10))
+                                                        @if(Auth::user()->karyawan && (Auth::user()->karyawan->jabatan == 20 || Auth::user()->karyawan->jabatan == 11))
                                                             <form action="{{ route('cuti.approve', $cuti->id) }}" method="POST" style="display:inline;">
                                                                 @csrf
                                                                 <button type="submit" class="btn btn-success">Approve</button>

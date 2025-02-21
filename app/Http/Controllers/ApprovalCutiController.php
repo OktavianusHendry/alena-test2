@@ -24,7 +24,7 @@ class ApprovalCutiController extends Controller
         if ($jabatan == 20) {
             // Direktur menyetujui cuti
             $cuti->approved_by_director = 'approved';
-        } elseif ($jabatan == 10) {
+        } elseif ($jabatan == 11) {
             // Manager menyetujui cuti
             $cuti->approved_by_manager = 'approved';
         }

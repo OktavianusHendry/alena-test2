@@ -18,8 +18,8 @@ class JabatanApprovalMiddleware
         // Ambil jabatan karyawan
         $jabatan = $user->karyawan->jabatan;
 
-        // Hanya Direktur (20) dan Manager (10) yang bisa approve
-        if ($jabatan != 20 && $jabatan != 10) {
+        // Hanya Direktur (20) dan Manager (11) yang bisa approve
+        if ($jabatan != 20 && $jabatan != 11) {
             return abort(403, 'Anda tidak memiliki izin untuk validasi cuti.');
         }
 
