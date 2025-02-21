@@ -331,7 +331,7 @@ Route::prefix('karyawan')->middleware('auth')->group(function () {
 });
 
 // Rute untuk menampilkan daftar laporan cuti
-Route::get('lalaporan_cuti_new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
+Route::get('laporan_cuti_new', [LaporanCutiNewController::class, 'index'])->name('laporan_cuti_new.index');
 
 // Rute untuk menampilkan form untuk membuat laporan cuti baru
 Route::get('laporan_cuti_new/create', [LaporanCutiNewController::class, 'create'])->name('laporan_cuti_new.create');
