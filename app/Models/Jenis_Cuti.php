@@ -21,4 +21,9 @@ class Jenis_Cuti extends Model
     {
         return $this->hasMany(Jenis_Cuti::class, 'id_jenis_cuti', 'id_jenis_cuti');
     }
+
+    public function cuti()
+    {
+        return $this->belongsTo(LaporanCutiNew::class, 'id_jenis_cuti');
+    }
 }
