@@ -71,7 +71,7 @@
                             @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            @forelse (auth()->user()->notifications as $notification)
+                            @forelse (optional(auth()->user())->notifications as $notification)
                                 <div class="d-flex justify-content-between align-items-center">
                                     <a class="dropdown-item" href="#">
                                         {{ $notification->data['message'] }}
