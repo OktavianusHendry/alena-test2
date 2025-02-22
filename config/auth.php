@@ -46,6 +46,12 @@ return [
         'provider' => 'karyawans',
         ],
 
+        'mentor' => [
+        'driver' => 'session',
+        'provider' => 'mentors',
+        ],
+        
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -84,6 +90,11 @@ return [
         'karyawans' => [ // Tambahan provider untuk karyawan
             'driver' => 'eloquent',
             'model' => App\Models\KaryawanNew::class,
+        ],
+
+        'mentors' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\MentorNew::class,
         ],
     ],
 
