@@ -70,30 +70,7 @@
                                 </span>
                             @endif
                         </a>
-                        <!-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            @forelse (auth()->user()->notifications as $notification)
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <a class="dropdown-item" href="#">
-                                        {{ $notification->data['message'] }}
-                                        <br>
-                                        <small
-                                            class="text-muted">{{ $notification->created_at->diffForHumans() }}</small>
-                                    </a>
-                                    <form action="{{ route('notifications.destroy', $notification->id) }}"
-                                        method="POST"
-                                        onsubmit="return confirm('Yakin ingin menghapus notifikasi ini?');">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-sm btn-danger">
-                                            <i class="bx bx-trash"></i>
-                                        </button>
-                                    </form>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </div>
-                            @empty
-                                <div class="dropdown-item">Tidak ada notifikasi</div>
-                            @endforelse
-                        </div> -->
+                        
                     </li>
                 </ul>
             </li>
