@@ -70,8 +70,8 @@
                                 </span>
                             @endif
                         </a>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            @forelse (auth()->user() || karyawan ()->notifications as $notification)
+                        <!-- <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            @forelse (auth()->user()->notifications as $notification)
                                 <div class="d-flex justify-content-between align-items-center">
                                     <a class="dropdown-item" href="#">
                                         {{ $notification->data['message'] }}
@@ -93,7 +93,7 @@
                             @empty
                                 <div class="dropdown-item">Tidak ada notifikasi</div>
                             @endforelse
-                        </div>
+                        </div> -->
                     </li>
                 </ul>
             </li>
