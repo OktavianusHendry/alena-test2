@@ -66,5 +66,8 @@ class Kernel extends HttpKernel
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'isCrew' => \App\Http\Middleware\CrewMiddleware::class,
         'jabatan.approval' => \App\Http\Middleware\JabatanApprovalMiddleware::class,
+
+        'auth.karyawan' => \App\Http\Middleware\AuthenticateKaryawan::class,
+        'auth.mentor' => \App\Http\Middleware\AuthenticateMentor::class,
     ];
 }
