@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminDashboardController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\CrewDashboardController;
@@ -89,32 +88,28 @@ Route::group(['middleware' => ['auth', 'isAdmin']], function () {
 
 });
 
-// Rute dashboard berdasarkan role
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// Untuk Staff
+Route::middleware(['auth:karyawan'])->group(function () {
+    Route::get('/staff/dashboard', function () {
+        return view('staff.dashboard');
+    })->name('staff.dashboard');
 
-    // Rute khusus Karyawan
-    Route::middleware(['auth:karyawan'])->group(function () {
-        Route::get('/karyawan/dashboard', [DashboardController::class, 'karyawan'])->name('karyawan.dashboard');
-        Route::get('/staff/dashboard', [DashboardController::class, 'staff'])->name('staff.dashboard');
-        Route::get('/manager/dashboard', [DashboardController::class, 'manager'])->name('manager.dashboard');
-        Route::get('/kepala-academy/dashboard', [DashboardController::class, 'kepalaAcademy'])->name('kepala_academy.dashboard');
-        Route::get('/wakil-direktur/dashboard', [DashboardController::class, 'wakilDirektur'])->name('wakil_direktur.dashboard');
-        Route::get('/direktur/dashboard', [DashboardController::class, 'direktur'])->name('direktur.dashboard');
-    });
-
-    // Rute khusus Mentor
-    Route::middleware(['auth:mentor'])->group(function () {
-        Route::get('/mentor/dashboard', [DashboardController::class, 'mentor'])->name('mentor.dashboard');
-    });
-
-    // Rute khusus Admin
-    Route::middleware(['auth:web'])->group(function () {
-        Route::get('/admin/dashboard', [DashboardController::class, 'admin'])->name('admin.dashboard');
-        Route::get('/crew/dashboard', [DashboardController::class, 'crew'])->name('crew.dashboard');
-        Route::get('/user/dashboard', [DashboardController::class, 'user'])->name('user.dashboard');
-    });
+    Route::get('/staff/dashboard', [StaffController::class, 'index'])->name('staff.dashboard');
 });
+
+// Untuk Manager
+Route::middleware(['auth:karyawan'])->group(function () {
+    Route::get('/manager/dashboard', function () {
+        return view('manager.dashboard');
+    })->name('manager.dashboard');
+    
+    Route::get('/manager/dashboard', [ManagerController::class, 'index'])->name('manager.dashboard');
+});
+
+// Default Karyawan
+Route::get('/karyawan/dashboard', function () {
+    return view('karyawan.dashboard');
+})->middleware('auth:karyawan')->name('karyawan.dashboard');
 
 Route::group(['middleware' => ['auth', 'isCrew']], function () {
 
